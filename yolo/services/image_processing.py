@@ -6,8 +6,8 @@ from yolo.utils.file_utils import return_image
 
 def process_image(file_path):
     img = cv2.imread(file_path)
-    # model = YOLO('best200.pt')
-    model = YOLO('/home/app/best200.pt')
+    model = YOLO('best200.pt')
+    # model = YOLO('/home/app/best200.pt')
     pred = model.predict(img)[0]
     boxes = pred.boxes.cpu().numpy()
     classes_id = boxes.cls
